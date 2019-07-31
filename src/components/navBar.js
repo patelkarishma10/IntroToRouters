@@ -37,12 +37,10 @@ export class NavBar extends Component {
                 <ul class="navBar">
                      <li><Link to="/">Home</Link></li> 
                     <li><Link to="/create">Create Recipes</Link></li>
-                    {/* <li><a href="login.html">Login</a></li> */}
                 </ul>
-                        {/* <Route exact path="/" component={Home} /> */}
-                        <Route path="/create" component={CreateRecipe} />
+                        {/* <Route path="/create" component={CreateRecipe} /> */}
+                        <Route path="/create" render={(props) => <CreateRecipe passedFunction={this.onLoad}/>} />
                         <Route exact path="/" render={(props) => <RecipeList passedFunction={this.onLoad} dataSent={this.state.data} />} />
-                         {/* <RecipeList passedFunction={this.onLoad} dataSent={this.state.data}/>  */}
                         </Router>
             </div>
         )

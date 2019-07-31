@@ -26,7 +26,8 @@ export class Recipe extends Component {
                             ))}</td>
                             <td><Router>
                                 <button><Link to="/moreinfo">More Info</Link></button>
-                                <Route path="/moreinfo" component={MoreInfo} />
+                                {/* <Route path="/moreinfo" component={MoreInfo} /> */}
+                                <Route exact path="/" render={(props) => <MoreInfo passedFunction={this.onLoad} dataSent={this.props.data} />} />
 
                             </Router></td>
                         </tr>
