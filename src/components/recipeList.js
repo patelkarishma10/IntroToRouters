@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from "lodash";
 import {Table} from "reactstrap";
 import { Recipe} from './recipe';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 export class RecipeList extends Component {
@@ -13,11 +14,11 @@ export class RecipeList extends Component {
                 <h2>Recipes</h2>
                 <Table>
                     <tbody>
-                        {this.props.dataSent.map((item) => (
+                        <tr>{this.props.dataSent.map((item) => (
 
-                                 <Recipe passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients}/> 
+                                 <Recipe passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients}/>       
 
-                        ))}
+                        ))}</tr>
                     </tbody>
                 </Table>
             </div>
@@ -25,3 +26,4 @@ export class RecipeList extends Component {
         );
     }
 }
+

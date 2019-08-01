@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
-
+import axios from "axios";
 
 export class CreateRecipe extends Component {
-createRecipe = () => {
-    
+createRecipe = (e) => {
+            e.preventDefault();
+     let newItem = {
+            name: e.target[0].value,
+            description: e.target[1].value,
+            ingredients: e.target[2].value
+        }
+
+        axios
+            .post("http://localhost:5000/recipe/createRecipe", newItem)
+
+            .then(response => {
+                console.log("created recipe")
+
+                this.props.passedFunction();
+            });
+
 }
 
     render() {
@@ -24,7 +39,7 @@ createRecipe = () => {
                     <input type="content" id="ingredients" class="form-control" required />
                     <br />
 
-                    <input type="submit" class="btn btn-primary" value="create recipe" />
+                    <input type="submit" class="btn btn-dark" value="create recipe" />
                 </form>
             </div>
 

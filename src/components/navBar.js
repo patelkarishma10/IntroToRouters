@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from "axios";
 
 import { CreateRecipe } from './createRecipe';
 import { RecipeList } from './recipeList';
-//import { Home } from './home';
+import { MoreInfo } from './moreInfo';
+// import { Home } from './home';
 
 export class NavBar extends Component {
 
@@ -13,15 +15,17 @@ export class NavBar extends Component {
       data: []
     };
   }
+  
 
   onLoad = () => {
- 
+        axios
+      .get("http://localhost:5000/recipe/all")
+      .then(response => {
         this.setState({
-          data: [{name: "cake", description: "Cake description", ingredients: ["flour", "milk", "sugar"]},
-          {name: "bread", description: "Cake description", ingredients: ["flour", "milk"]},
-        {name: "ice cream", description: "Cake description", ingredients: ["vanilla", "milk", "sugar"]}]
+          data: response.data
           
         });
+      })
  
   }
     
@@ -38,9 +42,9 @@ export class NavBar extends Component {
                      <li><Link to="/">Home</Link></li> 
                     <li><Link to="/create">Create Recipes</Link></li>
                 </ul>
-                        {/* <Route path="/create" component={CreateRecipe} /> */}
-                        <Route path="/create" render={(props) => <CreateRecipe passedFunction={this.onLoad}/>} />
+                        <Route path="/create" render={(props) => <CreateRecipe passedFunction={this.onLoad} dataSent={this.state.data}/>} />
                         <Route exact path="/" render={(props) => <RecipeList passedFunction={this.onLoad} dataSent={this.state.data} />} />
+                        <Route path="/pizza" render={(props) => <MoreInfo passedFunction={this.onLoad} dataSent={this.state.data} />} />
                         </Router>
             </div>
         )
