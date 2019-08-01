@@ -27,26 +27,35 @@ export class NavBar extends Component {
         });
       })
  
-  }
-    
-  componentDidMount() {
-    this.onLoad();
+      }
 
-  }
+      componentDidMount() {
+        this.onLoad();
 
-    render() {
+      }
+
+      render() {
         return (
-            <div>
-                <Router>
-                <ul class="navBar">
-                     <li><Link to="/">Home</Link></li> 
-                    <li><Link to="/create">Create Recipes</Link></li>
-                </ul>
-                        <Route path="/create" render={(props) => <CreateRecipe passedFunction={this.onLoad} dataSent={this.state.data}/>} />
-                        <Route exact path="/" render={(props) => <RecipeList passedFunction={this.onLoad} dataSent={this.state.data} />} />
-                        <Route path="/pizza" render={(props) => <MoreInfo passedFunction={this.onLoad} dataSent={this.state.data} />} />
-                        </Router>
-            </div>
+          <div>
+            <Router>
+              <ul class="navBar">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/create">Create Recipes</Link></li>
+              </ul>
+              <Route path="/create" render={(props) => <CreateRecipe passedFunction={this.onLoad} dataSent={this.state.data} />} />
+              <Route exact path="/" render={(props) => <RecipeList passedFunction={this.onLoad} dataSent={this.state.data} />} />
+
+
+              {this.state.data.map((item) => (
+
+                <Route path={"/"+item.name} render={(props) => <MoreInfo passedFunction={this.onLoad}
+                  description={item.description}
+                  ingredients={item.ingredients}
+                  name={item.name} />} />
+
+              ))}
+            </Router>
+          </div>
         )
-    }
+      }
 }

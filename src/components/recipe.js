@@ -3,14 +3,10 @@ import _ from "lodash";
 import {Table} from "reactstrap";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {MoreInfo} from './moreInfo';
-import Home from './home'
+// import Home from './home'
 
 
 export class Recipe extends Component {
-// handleRedirect = (props) => {
-
-// }
-
     render(props) {
 
 const { 
@@ -36,10 +32,3 @@ const {
         );
     }
 }
-
-{/* render={(props) => <MoreInfo passedFunction={this.onLoad} 
-                                description={this.props.description} 
-                                ingredients={this.props.ingredients} 
-                                name={this.props.name}/>} /> */}
-
-                                // <Route path={"/"+{name}} component={Home} />
