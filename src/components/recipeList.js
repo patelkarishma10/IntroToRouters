@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
-import _ from "lodash";
 import {Table} from "reactstrap";
 import { Recipe} from './recipe';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 export class RecipeList extends Component {
 
     render(props) {
         return (
-            <div class="formDiv">
+            <div className="formDiv">
                 <div id="random"> </div>
                 <h2>Recipes</h2>
                 <Table>
-                        {this.props.dataSent.map((item) => (
+                        {this.props.dataSent.map((item, index) => (
 
-                                 <Recipe passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients} image={item.image}/>       
+                                 <Recipe key={index} passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients} image={item.image}/>       
 
                         ))}
                 </Table>

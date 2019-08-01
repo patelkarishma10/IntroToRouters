@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import _ from "lodash";
-import {Table} from "reactstrap";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {MoreInfo} from './moreInfo';
+//import {MoreInfo} from './moreInfo';
 // import Home from './home'
 
 
@@ -17,8 +15,8 @@ const {
                     <tbody>
                         <tr>
                             <td>
-                                 <button  class="btn btn-dark">
-                            <Link to={this.props.name}>{this.props.name}</Link>
+                                 <button  className="btn btn-dark">
+                            <Link to={name}>{name}</Link>
                             </button>
                             </td>
                         </tr>

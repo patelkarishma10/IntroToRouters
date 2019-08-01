@@ -38,17 +38,17 @@ export class NavBar extends Component {
         return (
           <div>
             <Router>
-              <ul class="navBar">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/create">Create Recipes</Link></li>
+              <ul className="navBar">
+                <li id="homeButton" ><Link to="/">Home</Link></li>
+                <li id="createButton"><Link to="/create">Create Recipes</Link></li>
               </ul>
               <Route path="/create" render={(props) => <CreateRecipe passedFunction={this.onLoad} dataSent={this.state.data} />} />
               <Route exact path="/" render={(props) => <RecipeList passedFunction={this.onLoad} dataSent={this.state.data} />} />
 
 
-              {this.state.data.map((item) => (
+              {this.state.data.map((item, index) => (
 
-                <Route path={"/"+item.name} render={(props) => <MoreInfo passedFunction={this.onLoad}
+                <Route key={index} path={"/"+item.name} render={(props) => <MoreInfo passedFunction={this.onLoad}
                   description={item.description}
                   ingredients={item.ingredients}
                   name={item.name}

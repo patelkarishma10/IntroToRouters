@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { Table } from "reactstrap";
 
 import { UpdateRecipe } from './updateRecipe';
 
@@ -31,14 +30,14 @@ export class MoreInfo extends Component {
     render() {
         return (
             <div>
-                <div class="formDiv">
+                <div className="formDiv">
                     <p>Recipe: {this.props.name}</p>
                     <p>Description: {this.props.description}</p>
                     <p>Ingredients: {this.props.ingredients}</p>
                     <img src={this.props.image} alt="image not found"></img>
                     <br/>
                     <br/>
-                    <button class="btn btn-primary" onClick={this.makeRequest}>Delete</button>
+                    <button className="btn btn-primary" onClick={this.makeRequest}>Delete</button>
                     <p>{this.text}</p>
                 </div>
                 <div>

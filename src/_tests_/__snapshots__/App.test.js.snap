@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot App 1`] = `
+<div>
+  <div>
+    <ul
+      className="navBar"
+    >
+      <li
+        id="homeButton"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li
+        id="createButton"
+      >
+        <a
+          href="/create"
+          onClick={[Function]}
+        >
+          Create Recipes
+        </a>
+      </li>
+    </ul>
+    <div
+      className="formDiv"
+    >
+      <div
+        id="random"
+      >
+         
+      </div>
+      <h2>
+        Recipes
+      </h2>
+      <table
+        className="table"
+      />
+    </div>
+  </div>
+</div>
+`;
