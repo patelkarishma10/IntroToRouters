@@ -13,13 +13,11 @@ export class RecipeList extends Component {
                 <div id="random"> </div>
                 <h2>Recipes</h2>
                 <Table>
-                    <tbody>
-                        <tr>{this.props.dataSent.map((item) => (
+                        {this.props.dataSent.map((item) => (
 
                                  <Recipe passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients} image={item.image}/>       
 
-                        ))}</tr>
-                    </tbody>
+                        ))}
                 </Table>
             </div>
 

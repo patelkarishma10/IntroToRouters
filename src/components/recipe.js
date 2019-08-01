@@ -14,8 +14,6 @@ const {
 } = this.props
 
         return (
-            <div>
-                <Table>
                     <tbody>
                         <tr>
                             <td>
@@ -26,8 +24,6 @@ const {
                         </tr>
 
                     </tbody>
-                </Table>
-            </div>
 
         );
     }
