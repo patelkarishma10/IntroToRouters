@@ -51,7 +51,8 @@ export class NavBar extends Component {
                 <Route path={"/"+item.name} render={(props) => <MoreInfo passedFunction={this.onLoad}
                   description={item.description}
                   ingredients={item.ingredients}
-                  name={item.name} />} />
+                  name={item.name}
+                  id={item._id} />} />
 
               ))}
             </Router>
