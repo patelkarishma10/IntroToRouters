@@ -43,7 +43,7 @@ UpdateRecipe = (e) => {
                     <label htmlFor="image" >Image: </label>
                     <input type="content" id="image" className="form-control" required />
                     <br />
-                    <input type="submit" className="btn btn-dark" value="create recipe" />
+                    <input type="submit" className="btn btn-dark" value="update recipe" />
                 </form>
             </div>
 
