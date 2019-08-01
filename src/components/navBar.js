@@ -52,6 +52,7 @@ export class NavBar extends Component {
                   description={item.description}
                   ingredients={item.ingredients}
                   name={item.name}
+                  image={item.image}
                   id={item._id} />} />
 
               ))}

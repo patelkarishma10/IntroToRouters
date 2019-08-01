@@ -16,7 +16,7 @@ export class RecipeList extends Component {
                     <tbody>
                         <tr>{this.props.dataSent.map((item) => (
 
-                                 <Recipe passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients}/>       
+                                 <Recipe passedFunction={this.props.passedFunction} name={item.name} description={item.description} ingredients={item.ingredients} image={item.image}/>       
 
                         ))}</tr>
                     </tbody>

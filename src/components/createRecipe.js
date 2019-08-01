@@ -7,7 +7,8 @@ createRecipe = (e) => {
      let newItem = {
             name: e.target[0].value,
             description: e.target[1].value,
-            ingredients: e.target[2].value
+            ingredients: e.target[2].value,
+            image: e.target[3].value
         }
 
         axios
@@ -37,6 +38,10 @@ createRecipe = (e) => {
 
                     <label for="ingredients" >Ingredients: </label>
                     <input type="content" id="ingredients" class="form-control" required />
+                    <br />
+
+                    <label for="image" >Image: </label>
+                    <input type="content" id="image" class="form-control" required />
                     <br />
 
                     <input type="submit" class="btn btn-dark" value="create recipe" />
