@@ -4,12 +4,6 @@ import axios from "axios";
 import { UpdateRecipe } from './updateRecipe';
 
 export class MoreInfo extends Component {
-    constructor() {
-        super();
-        this.state = {
-            text: ""
-        };
-    }
     makeRequest = (e) => {
         e.preventDefault();
 
@@ -20,13 +14,11 @@ export class MoreInfo extends Component {
             .delete("http://localhost:5000/recipe/deleteRecipe", { data: deleteItem })
             .then(response => {
                 console.log("deleted recipe")
-                this.setState({
-                    text: "deleted"
-
-                });
+                window.alert("Item dleted")
                 this.props.passedFunction();
             });
     };
+
     render() {
         return (
             <div>
@@ -38,7 +30,6 @@ export class MoreInfo extends Component {
                     <br/>
                     <br/>
                     <button className="btn btn-primary" onClick={this.makeRequest}>Delete</button>
-                    <p>{this.text}</p>
                 </div>
                 <div>
                     <UpdateRecipe passedFunction={this.onLoad}
@@ -47,6 +38,7 @@ export class MoreInfo extends Component {
                         name={this.props.name}
                         id={this.props._id} />
                 </div>
+                
             </div>
 
         );
