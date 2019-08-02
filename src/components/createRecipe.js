@@ -11,7 +11,7 @@ export class CreateRecipe extends Component {
   }
 
 createRecipe = (e) => {
-            e.preventDefault();
+            // e.preventDefault();
      let newItem = {
             name: e.target[0].value,
             description: e.target[1].value,

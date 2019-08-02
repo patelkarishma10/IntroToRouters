@@ -3,7 +3,7 @@ import axios from "axios";
 
 export class UpdateRecipe extends Component {
 UpdateRecipe = (e) => {
-            e.preventDefault();
+            // e.preventDefault();
      let newItem = {
             name: e.target[0].value,
             description: e.target[1].value,
